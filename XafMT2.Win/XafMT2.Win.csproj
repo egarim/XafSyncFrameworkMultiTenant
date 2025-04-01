@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="DevExpress.ExpressApp.ListView" Alias="ListView" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Model.xafml" />
+    <None Remove="Images\Logo.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model.xafml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Logo.svg" />
+    <EmbeddedResource Include="Images\ExpressAppLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BIT.Data.Sync.Xaf" />
+    <PackageReference Include="DevExpress.ExpressApp" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" />
+    <PackageReference Include="DevExpress.ExpressApp.MultiTenancy.Win.Xpo" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Win" />
+    <PackageReference Include="DevExpress.ExpressApp.Win.Design" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" />
+    <PackageReference Include="DevExpress.Persistent.Base" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" />
+    <PackageReference Include="DevExpress.RichEdit.Export" />
+    <PackageReference Include="DevExpress.Win.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XafMT2.Module\XafMT2.Module.csproj" />
+  </ItemGroup>
+</Project>
