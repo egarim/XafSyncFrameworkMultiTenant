@@ -39,6 +39,8 @@ public class Startup {
             builder.AddXpoServices();
 
             SyncServerNode Node1 = CreateNode(InMemoryDataStoreProvider.ConnectionString,"Node1");
+            //HACK to add a node with a database
+            //SyncServerNode Node1 = CreateNode("Integrated Security=SSPI;Pooling=false;Data Source=(localdb)\\mssqllocaldb;Initial Catalog=Node1", "Node1");
             SyncServerNode Node2 = CreateNode(InMemoryDataStoreProvider.ConnectionString, "Node2");
             SyncServerNode Node3 = CreateNode(InMemoryDataStoreProvider.ConnectionString, "Node3");
             SyncServerNode Node4 = CreateNode(InMemoryDataStoreProvider.ConnectionString, "Node4");
